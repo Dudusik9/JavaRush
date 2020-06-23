@@ -1,23 +1,30 @@
 package com.javarush.task.task35.task3504;
 
+import javax.print.attribute.HashAttributeSet;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /* 
 Простой generics
 */
-public class Solution {
-    private HashMap map;
+public class Solution <T extends HashMap>
+{
+    private T  map;
 
-    public Solution(HashMap map) {
+    public Solution(T map)
+    {
         this.map = map;
     }
 
-    public HashMap getMap() {
+    public T getMap() {
         return map;
     }
 
-    public static void main(String[] args) {
+
+
+
+    public static void main(String[] args)
+    {
         HashMap<String, Integer> hashMap = new HashMap<>();
         hashMap.put("string", 4);
         Solution solution = new Solution(hashMap);
